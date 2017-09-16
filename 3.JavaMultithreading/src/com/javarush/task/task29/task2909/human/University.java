@@ -70,7 +70,6 @@ public class University {
         for (Student student : students) {
             if (min == student.getAverageGrade()) st = student;
         }
-      //  expel(st);
         return st;
     }
     public void expel(Student student) {

@@ -9,11 +9,6 @@ public class User {
 
     private Address address;
 
-
-//    private String country;
-//    private String city;
-//    private House house;
-
     private Work work;
 
     public User(String name, String surname, int age) {

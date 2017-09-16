@@ -7,7 +7,6 @@ public class StudentsDataBase {
     public static List<Student> students = new ArrayList<>();
 
     public static void addInfoAboutStudent(Student student) {
-  //      Student student = new Student(name, age, averageGrade);
         students.add(student);
         printInfoAboutStudent(student);
 
@@ -28,7 +27,6 @@ public class StudentsDataBase {
     }
 
     public static void findDimaOrSasha() {
-    //    boolean found = false;
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getName().equals("Dima")) {
                 System.out.println("Студент Dima есть в базе.");

@@ -1,7 +1,6 @@
 package com.javarush.task.task29.task2909.human;
 
 public class Worker extends Human {
- //   private Human human;
     private double salary;
     private String company;
 

@@ -76,9 +76,6 @@ public class Human implements Alive {
     }
 
     public void live() { }
-//
-//    public void fight() {
-//    }
 
     public int getId() {
         return id;
