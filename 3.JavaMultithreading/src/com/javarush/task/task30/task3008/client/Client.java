@@ -13,26 +13,54 @@ public class Client {
     protected Connection connection;
     private volatile boolean clientConnected = false;
 
+    public static void main(String[] args) {
+        Client client = new Client();
+        client.run();
+    }
+
+    public void run() {
+        Thread thread = getSocketThread();
+        thread.setDaemon(true);
+        thread.start();
+        try {
+            synchronized (this){
+            wait();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            ConsoleHelper.writeMessage("Ошибка потока...");
+            System.exit(1);
+        }
+        if (clientConnected) {
+            ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду ‘exit’.");
+            while (clientConnected) {
+                String message = ConsoleHelper.readString();
+                if (message.equals("exit")) {
+                    break;
+                } else {
+                    if (shouldSendTextFromConsole()) {
+                        sendTextMessage(message);
+                    }
+                }
+            }
+        } else ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
+
+    }
+
 
     protected String getServerAddress() {
-      //  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("enter ip adress or localhost");
-    //    String ipAdress = ConsoleHelper.readString();
-     //   if (ipAdress.equals("localhost")) {
             return ConsoleHelper.readString();
-     //   } else return ipAdress;
     }
 
     protected int getServerPort() {
-       // BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
               System.out.println("enter port number");
         return ConsoleHelper.readInt();
     }
 
     protected String getUserName() {
-      //  BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
               System.out.println("enter user name");
         return ConsoleHelper.readString();
@@ -50,12 +78,15 @@ public class Client {
         try {
             connection.send(new Message(MessageType.TEXT, text));
         } catch (IOException e) {
-            System.out.println(e);
+            ConsoleHelper.writeMessage("Ошибка при отправке сообщения...");
             clientConnected = false;
         }
     }
 
     public class SocketThread extends Thread {
+        @Override
+        public void run() {
 
+        }
     }
 }
