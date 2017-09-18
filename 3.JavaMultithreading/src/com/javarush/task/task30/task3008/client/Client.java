@@ -50,19 +50,19 @@ public class Client {
 
     protected String getServerAddress() {
 
-        System.out.println("enter ip adress or localhost");
+        ConsoleHelper.writeMessage("enter ip adress or localhost");
             return ConsoleHelper.readString();
     }
 
     protected int getServerPort() {
 
-              System.out.println("enter port number");
+              ConsoleHelper.writeMessage("enter port number");
         return ConsoleHelper.readInt();
     }
 
     protected String getUserName() {
 
-              System.out.println("enter user name");
+              ConsoleHelper.writeMessage("enter user name");
         return ConsoleHelper.readString();
     }
 
@@ -84,6 +84,26 @@ public class Client {
     }
 
     public class SocketThread extends Thread {
+
+        protected void processIncomingMessage(String message) {
+            ConsoleHelper.writeMessage(message);
+        }
+
+        protected void informAboutAddingNewUser(String userName) {
+            ConsoleHelper.writeMessage(userName + " - присоединился к чату.");
+        }
+
+        protected void informAboutDeletingNewUser(String userName) {
+            ConsoleHelper.writeMessage(userName + " - покинул чат.");
+        }
+
+        protected void notifyConnectionStatusChanged(boolean clientConnected) {
+            synchronized (Client.this) {
+                 Client.this.clientConnected = clientConnected;
+                Client.this.notify();
+            }
+        }
+
         @Override
         public void run() {
 
