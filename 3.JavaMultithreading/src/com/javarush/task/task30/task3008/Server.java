@@ -22,9 +22,33 @@ public class Server {
 
     private static class Handler extends Thread {
         Socket socket;
+
         public Handler(Socket socket) {
             this.socket = socket;
         }
+
+        public void run() {
+            String userName = "";
+            System.out.println("Установленное новое соединение: " + socket.getRemoteSocketAddress());
+            try {
+                Connection connection = new Connection(socket);
+                userName = serverHandshake(connection);
+                sendBroadcastMessage(new Message(MessageType.USER_ADDED, userName));
+                sendListOfUsers(connection, userName);
+                serverMainLoop(connection, userName);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println(e);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                System.out.println(e);
+            }
+            connectionMap.remove(userName);
+            sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
+            System.out.println("Cоединение с удаленным адресом закрыто.");
+        }
+
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST));
