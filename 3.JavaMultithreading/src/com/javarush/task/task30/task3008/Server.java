@@ -15,7 +15,7 @@ public class Server {
             try {
                 pair.getValue().send(message);
             } catch (IOException e) {
-                System.out.println(e);
+                ConsoleHelper.writeMessage("Ошибка... sendBroadcastMessage");
             }
         }
     }
@@ -29,7 +29,7 @@ public class Server {
 
         public void run() {
             String userName = "";
-            System.out.println("Установленное новое соединение: " + socket.getRemoteSocketAddress());
+            ConsoleHelper.writeMessage("Установленное новое соединение: " + socket.getRemoteSocketAddress());
             try {
                 Connection connection = new Connection(socket);
                 userName = serverHandshake(connection);
@@ -39,14 +39,14 @@ public class Server {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println(e);
+                ConsoleHelper.writeMessage("Ошибка...нет соединения");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
-                System.out.println(e);
+                ConsoleHelper.writeMessage("Ошибка...нет соединения");
             }
             connectionMap.remove(userName);
             sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
-            System.out.println("Cоединение с удаленным адресом закрыто.");
+            ConsoleHelper.writeMessage("Cоединение с удаленным адресом закрыто.");
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
@@ -84,20 +84,20 @@ public class Server {
         int portSocket = ConsoleHelper.readInt();
         try {
             ServerSocket serverSocket = new ServerSocket(portSocket);
-            System.out.println("Сервер запущен");
+            ConsoleHelper.writeMessage("Сервер запущен");
             while (true) {
                 try {
                     Socket clientSocket = serverSocket.accept();
                     Thread thread = new Handler(clientSocket);
                     thread.start();
                 } catch (Exception e){
-                    System.out.println(e);
+                    ConsoleHelper.writeMessage("Ошибка...сервер не запущен");
                     serverSocket.close();
                     break;
                 }
             }
         } catch (IOException e) {
-            System.out.println(e);
+            ConsoleHelper.writeMessage("Ошибка...сервер не запущен");
 
         }
 

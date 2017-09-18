@@ -8,6 +8,8 @@ import com.javarush.task.task30.task3008.MessageType;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class Client {
     protected Connection connection;
@@ -136,7 +138,23 @@ public class Client {
 
         @Override
         public void run() {
-
+            String ip = getServerAddress();
+            int port = getServerPort();
+            try {
+                Socket socket = new Socket(ip, port);
+                connection = new Connection(socket);
+                clientHandshake();
+                clientMainLoop();
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+                notifyConnectionStatusChanged(false);
+            } catch (IOException e) {
+                e.printStackTrace();
+                notifyConnectionStatusChanged(false);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                notifyConnectionStatusChanged(false);
+            }
         }
     }
 }
