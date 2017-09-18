@@ -25,8 +25,21 @@ public class Server {
         public Handler(Socket socket) {
             this.socket = socket;
         }
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
+            while (true) {
+                connection.send(new Message(MessageType.NAME_REQUEST));
+                Message message = connection.receive();
+                if ((message.getType()).equals(MessageType.USER_NAME) && !(message.getData().isEmpty()) && !(connectionMap.containsKey(message.getData()))) {
+                    connectionMap.put(message.getData(), connection);
+                    connection.send(new Message(MessageType.NAME_ACCEPTED));
+                    return message.getData();
+                }
+            }
+
+        }
 
     }
+
     public static void main(String[] args) {
         int portSocket = ConsoleHelper.readInt();
         try {
