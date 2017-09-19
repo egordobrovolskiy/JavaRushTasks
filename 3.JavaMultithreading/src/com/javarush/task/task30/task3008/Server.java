@@ -82,6 +82,7 @@ public class Server {
 
     public static void main(String[] args) {
         int portSocket = ConsoleHelper.readInt();
+        ConsoleHelper.writeMessage("Input server port: ");
         try {
             ServerSocket serverSocket = new ServerSocket(portSocket);
             ConsoleHelper.writeMessage("Сервер запущен");
