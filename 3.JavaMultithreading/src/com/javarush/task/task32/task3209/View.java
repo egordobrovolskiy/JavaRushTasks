@@ -22,6 +22,19 @@ public class View extends JFrame implements ActionListener {
 
     private UndoListener undoListener = new UndoListener(undoManager);
 
+    public void showAbout() {
+        JOptionPane.showMessageDialog(getContentPane(), "Выкрутка мозгов", "Информация", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void update() {
+        htmlTextPane.setDocument(controller.getDocument());
+    }
+
+    public void selectHtmlTab() {
+        tabbedPane.setSelectedIndex(0);
+        resetUndo();
+    }
+
     public boolean isHtmlTabSelected() {
         return tabbedPane.getSelectedIndex() == 0;
     }
