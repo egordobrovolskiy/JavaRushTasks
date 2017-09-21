@@ -14,7 +14,7 @@ public class Controller {
     private File currentFile;
 
     public void init() {
-
+        createNewDocument();
     }
 
     public static void main(String[] args) {
@@ -38,7 +38,11 @@ public class Controller {
     }
 
     public void createNewDocument() {
-
+        view.selectHtmlTab();
+        resetDocument();
+        view.setTitle("HTML редактор");
+        currentFile = null;
+        view.resetUndo();
     }
 
     public String getPlainText() {
