@@ -1,9 +1,12 @@
 package com.javarush.task.task32.task3209;
 
+import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 public class Controller {
     private View view;
@@ -20,6 +23,16 @@ public class Controller {
         view.setController(controller);
         view.init();
         controller.init();
+    }
+
+    public String getPlainText() {
+        StringWriter stringWriter = new StringWriter();
+        try {
+            new HTMLEditorKit().write(stringWriter, document, 0, document.getLength());
+        } catch (Exception e) {
+            ExceptionHandler.log(e);
+        }
+        return stringWriter.toString();
     }
 
     public void setPlainText(String text) {
