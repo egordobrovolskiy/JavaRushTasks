@@ -25,6 +25,22 @@ public class Controller {
         controller.init();
     }
 
+    public void saveDocumentAs() {
+
+    }
+
+    public void saveDocument() {
+
+    }
+
+    public void openDocument() {
+
+    }
+
+    public void createNewDocument() {
+
+    }
+
     public String getPlainText() {
         StringWriter stringWriter = new StringWriter();
         try {
