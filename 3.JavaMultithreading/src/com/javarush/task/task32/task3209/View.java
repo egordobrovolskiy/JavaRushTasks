@@ -22,6 +22,10 @@ public class View extends JFrame implements ActionListener {
 
     private UndoListener undoListener = new UndoListener(undoManager);
 
+    public boolean isHtmlTabSelected() {
+        return tabbedPane.getSelectedIndex() == 0;
+    }
+
     public void undo() {
         try {
             undoManager.undo();
