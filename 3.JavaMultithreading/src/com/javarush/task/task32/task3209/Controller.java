@@ -1,7 +1,6 @@
 package com.javarush.task.task32.task3209;
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.*;
@@ -34,6 +33,8 @@ public class Controller {
             try {
                 FileWriter fileWriter = new FileWriter(currentFile);
                 new HTMLEditorKit().write(fileWriter, document, 0, document.getLength());
+                fileWriter.flush();
+                fileWriter.close();
             } catch (Exception e) {
                 ExceptionHandler.log(e);
             }
@@ -48,6 +49,8 @@ public class Controller {
             try {
                 FileWriter fileWriter = new FileWriter(currentFile);
                 new HTMLEditorKit().write(fileWriter, document, 0, document.getLength());
+                fileWriter.flush();
+                fileWriter.close();
             } catch (Exception e) {
                 ExceptionHandler.log(e);
             }
@@ -68,6 +71,7 @@ public class Controller {
                 FileReader fileReader = new FileReader(currentFile);
                 new HTMLEditorKit().read(fileReader, document, 0);
                 view.resetUndo();
+                fileReader.close();
 
             } catch (Exception e) {
                 ExceptionHandler.log(e);
