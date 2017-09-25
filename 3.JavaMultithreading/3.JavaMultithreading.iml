@@ -19,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/com/javarush/task/task23/task2309" />
       <excludeFolder url="file://$MODULE_DIR$/src/com/javarush/task/task23/task2310" />
       <excludeFolder url="file://$MODULE_DIR$/src/com/javarush/task/task23/task2311" />
+      <excludeFolder url="file://$MODULE_DIR$/src/com/javarush/task/task28" />
     </content>
     <content url="file://$MODULE_DIR$/src/com/javarush/task/task21/task2113" />
     <orderEntry type="inheritedJdk" />
