@@ -11,6 +11,8 @@ public class AdvertisementManager {
     }
 
     public void processVideos() {
-        ConsoleHelper.writeMessage("calling processVideos method");
+        if (AdvertisementStorage.getInstance().list().isEmpty()) {
+            throw new NoVideoAvailableException();
+        }
     }
 }
