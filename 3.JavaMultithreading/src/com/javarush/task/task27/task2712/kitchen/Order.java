@@ -7,12 +7,16 @@ import java.io.IOException;
 import java.util.List;
 
 public class Order {
-    private final Tablet tablet;
     protected List<Dish> dishes;
+    private final Tablet tablet;
 
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
         this.dishes = ConsoleHelper.getAllDishesForOrder();
+    }
+
+    public boolean isEmpty() {
+        return dishes.isEmpty();
     }
 
     @Override
