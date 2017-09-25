@@ -29,12 +29,15 @@ public class StatisticManager {
     }
 
     private static class StatisticStorage {
-    private Map<EventType, List<EventDataRow>> storage = new HashMap<>();
+        private Map<EventType, List<EventDataRow>> storage = new HashMap<>();
 
-    StatisticStorage() {
+        StatisticStorage() {
             for (EventType type : EventType.values()) {
                 storage.put(type, new ArrayList<EventDataRow>());
             }
+        }
+        private void put(EventDataRow data) {
+            storage.get(data.getType()).add(data);
         }
     }
 }
