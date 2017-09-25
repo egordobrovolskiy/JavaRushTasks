@@ -33,12 +33,15 @@ public class ConsoleHelper {
                 writeMessage("Повторите ваш заказ");
                 continue;
             }
-            for (Dish d : Dish.values()) {
-                if (d.name().equalsIgnoreCase(textOrder)) {
-                    dishes.add(d);
-                } else writeMessage("Такого блюда нет");
+            boolean found = false;
+            for(Dish dish : Dish.values())
+                if(dish.name().equalsIgnoreCase(textOrder)) {
+                    dishes.add(dish);
+                    found = true;
+                }
+            if(!found){
+                writeMessage("Нет такого блюда");
             }
-
         }
         return dishes;
     }
