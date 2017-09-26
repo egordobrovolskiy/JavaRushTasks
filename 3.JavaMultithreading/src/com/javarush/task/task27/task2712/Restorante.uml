@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="253.0">com.javarush.task.task27.task2712.ad.Advertisement</node>
+    <node x="0.0" y="720.0">com.javarush.task.task27.task2712.ad.AdvertisementStorage</node>
+    <node x="0.0" y="624.0">com.javarush.task.task27.task2712.kitchen.Waiter</node>
+    <node x="0.0" y="460.0">com.javarush.task.task27.task2712.kitchen.Cook</node>
+    <node x="0.0" y="0.0">com.javarush.task.task27.task2712.kitchen.Dish</node>
+    <node x="247.0" y="0.0">com.javarush.task.task27.task2712.kitchen.Order</node>
+    <node x="285.0" y="460.0">com.javarush.task.task27.task2712.ConsoleHelper</node>
+    <node x="499.0" y="624.0">com.javarush.task.task27.task2712.ad.AdvertisementManager</node>
+    <node x="344.0" y="253.0">com.javarush.task.task27.task2712.Tablet</node>
+    <node x="285.0" y="624.0">com.javarush.task.task27.task2712.Restaurant</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.6855733662145499" x="147.0" y="396.0" />
+  <SelectedNodes>
+    <node>com.javarush.task.task27.task2712.kitchen.Dish</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
