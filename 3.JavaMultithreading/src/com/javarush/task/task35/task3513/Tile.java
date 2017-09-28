@@ -56,4 +56,8 @@ public class Tile {
                 return new Color(0xff0000);
         }
     }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }
