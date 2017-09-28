@@ -15,8 +15,10 @@ public class Model {
 
     private void addTile() {
         ArrayList<Tile> emptyTiles = getEmptyTiles();
-        Tile emptyTile = emptyTiles.get((int) (emptyTiles.size()*Math.random()));
-        emptyTile.setValue(Math.random() < 0.9 ? 2 : 4);
+        if (emptyTiles != null && emptyTiles.size() != 0) {
+            Tile emptyTile = emptyTiles.get((int) (emptyTiles.size()*Math.random()));
+            emptyTile.setValue(Math.random() < 0.9 ? 2 : 4);
+        }
     }
 
     private ArrayList<Tile> getEmptyTiles() {
@@ -74,4 +76,16 @@ public class Model {
         return change;
     }
 
+    public void left() {
+        boolean isChanged = false;
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i])) {
+                isChanged = true;
+            }
+        }
+        if (isChanged) {
+            addTile();
+        }
+    }
 }
+
