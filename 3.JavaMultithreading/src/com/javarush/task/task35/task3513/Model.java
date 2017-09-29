@@ -174,6 +174,16 @@ public class Model {
         return false;
     }
 
+    public void randomMove() {
+        int randomMove = (int) ((Math.random()*100) % 5);
+        switch (randomMove) {
+            case (0): left(); break;
+            case (1): right(); break;
+            case (2): up(); break;
+            case (3): down(); break;
+        }
+    }
+
     public Tile[][] getGameTiles() {
         return gameTiles;
     }
@@ -181,5 +191,6 @@ public class Model {
     public int getScore() {
         return score;
     }
+
 }
 
