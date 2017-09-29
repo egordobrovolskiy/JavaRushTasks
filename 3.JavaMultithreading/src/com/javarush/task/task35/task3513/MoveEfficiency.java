@@ -14,7 +14,7 @@ public class MoveEfficiency implements Comparable<MoveEfficiency> {
     public Move getMove() {
         return move;
     }
-// compareTo должен возвращать -1, 0 или 1
+
     @Override
     public int compareTo(MoveEfficiency that) {
         final int BEFORE = -1;
