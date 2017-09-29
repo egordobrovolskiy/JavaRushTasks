@@ -144,5 +144,8 @@ public class Model {
         return gameTiles;
     }
 
+    public int getScore() {
+        return score;
+    }
 }
 
