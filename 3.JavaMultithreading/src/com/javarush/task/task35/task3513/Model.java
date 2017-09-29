@@ -1,7 +1,6 @@
 package com.javarush.task.task35.task3513;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Model {
     private  static final int FIELD_WIDTH = 4;
@@ -122,5 +121,28 @@ public class Model {
         rotateToRight();
         rotateToRight();
     }
+
+    public boolean canMove() {
+        if(!getEmptyTiles().isEmpty()) return true;
+
+        for (int i = 0; i < gameTiles.length; i++) {
+            for (int j = 1; j < gameTiles.length; j++) {
+                if (gameTiles[i][j].getValue() == gameTiles[i][j-1].getValue())
+                    return true;
+            }
+        }
+        for (int i = 0; i < gameTiles.length; i++) {
+            for (int j = 1; j < gameTiles.length; j++) {
+                if (gameTiles[j][i].getValue() == gameTiles[j-1][i].getValue())
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public Tile[][] getGameTiles() {
+        return gameTiles;
+    }
+
 }
 
