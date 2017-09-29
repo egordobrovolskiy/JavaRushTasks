@@ -1,6 +1,7 @@
 package com.javarush.task.task35.task3513;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Model {
     private  static final int FIELD_WIDTH = 4;
@@ -8,8 +9,34 @@ public class Model {
     public int score;
     public int maxTile;
 
+    //для реализации возврата хода
+    private Stack<Integer> previousScores;
+    private Stack<Tile[][]> previousStates;
+    private boolean isSaveNeeded = true;
+
     public Model () {
         resetGameTiles();
+        previousScores = new Stack<>();
+        previousStates = new Stack<>();
+    }
+
+    private void saveState(Tile[][] tiles) {
+        Tile[][] tilesForSave = new Tile[tiles.length][tiles[0].length];
+        for (int i = 0; i < tilesForSave.length; i++) {
+            for (int k =0 ; k < tilesForSave[0].length; k++) {
+                tilesForSave[i][k] = new Tile(tiles[i][k].getValue());
+            }
+        }
+        previousStates.push(tilesForSave);
+        previousScores.push(score);
+        isSaveNeeded = false;
+    }
+
+    public void rollback() {
+        if (!previousStates.isEmpty() && !previousScores.isEmpty()) {
+            this.gameTiles = previousStates.pop();
+            this.score = previousScores.pop();
+        }
     }
 
     private void addTile() {
