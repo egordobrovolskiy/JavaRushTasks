@@ -103,6 +103,9 @@ public class Model {
     }
 
     public void left() {
+        if (isSaveNeeded) {
+            saveState(gameTiles);
+        }
         boolean isChanged = false;
         for (int i = 0; i < FIELD_WIDTH; i++) {
             if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i])) {
@@ -112,6 +115,7 @@ public class Model {
         if (isChanged) {
             addTile();
         }
+        isSaveNeeded = true;
     }
 
     private void rotateToRight() {
@@ -128,6 +132,7 @@ public class Model {
     }
 
     void right() {
+        saveState(gameTiles);
         rotateToRight();
         rotateToRight();
         left();
@@ -135,6 +140,7 @@ public class Model {
         rotateToRight();
     }
     void up() {
+        saveState(gameTiles);
         rotateToRight();
         rotateToRight();
         rotateToRight();
@@ -142,6 +148,7 @@ public class Model {
         rotateToRight();
     }
     void down() {
+        saveState(gameTiles);
         rotateToRight();
         left();
         rotateToRight();
