@@ -12,7 +12,14 @@ public class Field {
     }
     //объект будет отрисовывать на экран свое текущее состояние
     public void print() {
-
+        for (int i = 0; i < height; i++) {
+            for (int k = 0; k < width; k++) {
+                if (matrix[i][k] == 0) {
+                    System.out.print(".");
+                } else System.out.print("X");
+            }
+            System.out.println();
+        }
     }
     //будет удалять из матрицы полностью заполненные строки и сдвигать вышележащие строки вниз
     public void removeFullLines() {
