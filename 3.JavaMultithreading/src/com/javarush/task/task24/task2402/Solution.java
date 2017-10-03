@@ -38,8 +38,8 @@ public class Solution {
         }
     }
 
-    public static class Test4 extends Test3 {
-        protected Test4 c1one() throws CloneNotSupportedException {
+    public static class Test4 extends Test3 implements Cloneable {
+        protected Test4 clone() throws CloneNotSupportedException {
             return (Test4)super.clone();
         }
     }

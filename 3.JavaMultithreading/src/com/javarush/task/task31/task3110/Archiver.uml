@@ -3,20 +3,20 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="768.6146488469602" y="835.0">com.javarush.task.task31.task3110.command.ZipAddCommand</node>
-    <node x="341.09355345911973" y="835.0">com.javarush.task.task31.task3110.command.ZipCreateCommand</node>
-    <node x="351.3852201257864" y="1158.0">com.javarush.task.task31.task3110.Archiver</node>
-    <node x="1332.791928721174" y="416.5">com.javarush.task.task31.task3110.command.Command</node>
+    <node x="768.6146488469601" y="835.0">com.javarush.task.task31.task3110.command.ZipAddCommand</node>
+    <node x="341.0935534591197" y="835.0">com.javarush.task.task31.task3110.command.ZipCreateCommand</node>
+    <node x="351.38522012578636" y="1158.0">com.javarush.task.task31.task3110.Archiver</node>
+    <node x="1332.7919287211737" y="416.5">com.javarush.task.task31.task3110.command.Command</node>
     <node x="1203.354428721174" y="835.0">com.javarush.task.task31.task3110.command.ZipContentCommand</node>
-    <node x="1414.791928721174" y="649.0">com.javarush.task.task31.task3110.command.ExitCommand</node>
+    <node x="1414.7919287211737" y="649.0">com.javarush.task.task31.task3110.command.ExitCommand</node>
     <node x="10.5" y="780.0">com.javarush.task.task31.task3110.Operation</node>
     <node x="1018.3544287211738" y="835.0">com.javarush.task.task31.task3110.command.ZipRemoveCommand</node>
     <node x="942.5" y="33.5">com.javarush.task.task31.task3110.ConsoleHelper</node>
     <node x="529.8852201257864" y="305.0">com.javarush.task.task31.task3110.ZipFileManager</node>
-    <node x="660.5000000000001" y="0.0">com.javarush.task.task31.task3110.FileProperties</node>
+    <node x="660.5" y="0.0">com.javarush.task.task31.task3110.FileProperties</node>
     <node x="726.3840408805033" y="649.0">com.javarush.task.task31.task3110.command.ZipCommand</node>
-    <node x="164.0935534591198" y="835.0">com.javarush.task.task31.task3110.command.ZipExtractCommand</node>
-    <node x="659.1146488469602" y="1011.0">com.javarush.task.task31.task3110.CommandExecutor</node>
+    <node x="164.09355345911968" y="835.0">com.javarush.task.task31.task3110.command.ZipExtractCommand</node>
+    <node x="659.1146488469601" y="1011.0">com.javarush.task.task31.task3110.CommandExecutor</node>
     <node x="202.8125" y="78.0">com.javarush.task.task31.task3110.exception</node>
     <node x="427.7173742138367" y="32.5">com.javarush.task.task31.task3110.FileManager</node>
   </nodes>
@@ -32,15 +32,15 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipAddCommand" target="com.javarush.task.task31.task3110.exception">
       <point x="-54.0" y="-25.5" />
-      <point x="786.6146488469602" y="740.0" />
-      <point x="492.34355345911973" y="740.0" />
-      <point x="492.34355345911973" y="235.0" />
+      <point x="786.6146488469601" y="740.0" />
+      <point x="492.3435534591197" y="740.0" />
+      <point x="492.3435534591197" y="235.0" />
       <point x="293.8125" y="235.0" />
       <point x="26.0" y="14.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.Archiver" target="com.javarush.task.task31.task3110.exception">
-      <point x="-76.125" y="-36.5" />
-      <point x="376.7602201257864" y="1138.0" />
+      <point x="-76.12500000000006" y="-36.5" />
+      <point x="376.7602201257863" y="1138.0" />
       <point x="0.0" y="1138.0" />
       <point x="0.0" y="235.0" />
       <point x="215.8125" y="235.0" />
@@ -49,7 +49,7 @@
     <edge source="com.javarush.task.task31.task3110.command.ZipContentCommand" target="com.javarush.task.task31.task3110.command.ZipCommand">
       <point x="-61.875" y="-25.5" />
       <point x="1223.979428721174" y="740.0" />
-      <point x="922.5840408805034" y="740.0" />
+      <point x="922.5840408805033" y="740.0" />
       <point x="87.19999999999993" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.command.ZipContentCommand">
@@ -65,8 +65,8 @@
       <point x="-47.66666666666674" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.Archiver" target="com.javarush.task.task31.task3110.Operation">
-      <point x="-25.375" y="-36.5" />
-      <point x="427.5102201257864" y="1128.0" />
+      <point x="-25.375000000000057" y="-36.5" />
+      <point x="427.5102201257863" y="1128.0" />
       <point x="51.76022012578642" y="1128.0" />
       <point x="51.76022012578642" y="991.0" />
       <point x="27.33333333333337" y="991.0" />
@@ -74,14 +74,14 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ExitCommand" target="com.javarush.task.task31.task3110.command.Command">
       <point x="-35.75" y="-25.5" />
-      <point x="1450.541928721174" y="629.0" />
+      <point x="1450.5419287211737" y="629.0" />
       <point x="1451.9585953878404" y="629.0" />
       <point x="47.66666666666674" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipContentCommand" target="com.javarush.task.task31.task3110.FileProperties">
       <point x="20.625" y="-25.5" />
       <point x="1306.479428721174" y="245.0" />
-      <point x="878.8333333333334" y="245.0" />
+      <point x="878.8333333333333" y="245.0" />
       <point x="87.33333333333326" y="92.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipContentCommand" target="com.javarush.task.task31.task3110.ZipFileManager">
@@ -94,21 +94,21 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipAddCommand" target="com.javarush.task.task31.task3110.command.ZipCommand">
       <point x="18.0" y="-25.5" />
-      <point x="858.6146488469602" y="760.0" />
+      <point x="858.6146488469601" y="760.0" />
       <point x="835.3840408805033" y="760.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipExtractCommand" target="com.javarush.task.task31.task3110.ConsoleHelper">
       <point x="-19.625" y="-25.5" />
-      <point x="222.9685534591198" y="760.0" />
-      <point x="218.46737421383682" y="760.0" />
-      <point x="218.46737421383682" y="255.0" />
+      <point x="222.96855345911968" y="760.0" />
+      <point x="218.4673742138367" y="760.0" />
+      <point x="218.4673742138367" y="255.0" />
       <point x="953.9444444444446" y="255.0" />
       <point x="-91.55555555555554" y="59.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipAddCommand" target="com.javarush.task.task31.task3110.ZipFileManager">
       <point x="-18.0" y="-25.5" />
-      <point x="822.6146488469602" y="730.0" />
+      <point x="822.6146488469601" y="730.0" />
       <point x="673.7590408805033" y="730.0" />
       <point x="673.7590408805033" y="629.0" />
       <point x="652.3852201257864" y="629.0" />
@@ -116,13 +116,13 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipCreateCommand" target="com.javarush.task.task31.task3110.command.ZipCommand">
       <point x="58.5" y="-25.5" />
-      <point x="477.59355345911973" y="760.0" />
-      <point x="791.7840408805034" y="760.0" />
+      <point x="477.5935534591197" y="760.0" />
+      <point x="791.7840408805033" y="760.0" />
       <point x="-43.60000000000002" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipCreateCommand" target="com.javarush.task.task31.task3110.ZipFileManager">
       <point x="19.5" y="-25.5" />
-      <point x="438.59355345911973" y="740.0" />
+      <point x="438.5935534591197" y="740.0" />
       <point x="427.8423742138367" y="740.0" />
       <point x="427.8423742138367" y="629.0" />
       <point x="603.3852201257864" y="629.0" />
@@ -138,19 +138,19 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.command.ZipRemoveCommand">
       <point x="40.33333333333326" y="-48.5" />
-      <point x="880.9479821802935" y="961.0" />
+      <point x="880.9479821802934" y="961.0" />
       <point x="1100.854428721174" y="961.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ExitCommand" target="com.javarush.task.task31.task3110.ConsoleHelper">
       <point x="35.75" y="-25.5" />
-      <point x="1522.041928721174" y="225.0" />
+      <point x="1522.0419287211737" y="225.0" />
       <point x="1114.1666666666667" y="225.0" />
-      <point x="68.66666666666663" y="59.0" />
+      <point x="68.66666666666674" y="59.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipExtractCommand" target="com.javarush.task.task31.task3110.exception">
       <point x="-58.875" y="-25.5" />
-      <point x="183.7185534591198" y="760.0" />
+      <point x="183.71855345911968" y="760.0" />
       <point x="168.375" y="760.0" />
       <point x="168.375" y="245.0" />
       <point x="241.8125" y="245.0" />
@@ -159,7 +159,7 @@
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.command.ExitCommand">
       <point x="161.33333333333337" y="-48.5" />
       <point x="1001.9479821802936" y="991.0" />
-      <point x="1486.291928721174" y="991.0" />
+      <point x="1486.2919287211737" y="991.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipRemoveCommand" target="com.javarush.task.task31.task3110.ZipFileManager">
@@ -185,43 +185,43 @@
       <point x="43.59999999999991" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.ZipFileManager" target="com.javarush.task.task31.task3110.FileManager">
-      <point x="-85.74999999999989" y="-137.0" />
-      <point x="615.6352201257865" y="215.0" />
+      <point x="-85.75" y="-137.0" />
+      <point x="615.6352201257864" y="215.0" />
       <point x="477.2173742138367" y="215.0" />
       <point x="-49.5" y="60.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.ZipFileManager" target="com.javarush.task.task31.task3110.FileProperties">
       <point x="28.58333333333337" y="-137.0" />
-      <point x="729.9685534591198" y="245.0" />
+      <point x="729.9685534591197" y="245.0" />
       <point x="704.1666666666667" y="245.0" />
       <point x="-87.33333333333337" y="92.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.ZipFileManager" target="com.javarush.task.task31.task3110.ConsoleHelper">
       <point x="142.91666666666663" y="-137.0" />
-      <point x="844.301886792453" y="275.0" />
+      <point x="844.3018867924529" y="275.0" />
       <point x="999.7222222222222" y="275.0" />
       <point x="-45.77777777777783" y="59.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipCreateCommand" target="com.javarush.task.task31.task3110.exception">
       <point x="-58.5" y="-25.5" />
-      <point x="360.59355345911973" y="730.0" />
-      <point x="300.4060534591198" y="730.0" />
-      <point x="300.4060534591198" y="245.0" />
+      <point x="360.5935534591197" y="730.0" />
+      <point x="300.4060534591197" y="730.0" />
+      <point x="300.4060534591197" y="245.0" />
       <point x="267.8125" y="245.0" />
       <point x="0.0" y="14.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.Archiver" target="com.javarush.task.task31.task3110.ConsoleHelper">
-      <point x="76.125" y="-36.5" />
-      <point x="529.0102201257864" y="1138.0" />
-      <point x="1568.291928721174" y="1138.0" />
-      <point x="1568.291928721174" y="215.0" />
+      <point x="76.12499999999994" y="-36.5" />
+      <point x="529.0102201257863" y="1138.0" />
+      <point x="1568.2919287211737" y="1138.0" />
+      <point x="1568.2919287211737" y="215.0" />
       <point x="1137.0555555555557" y="215.0" />
       <point x="91.55555555555566" y="59.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.command.ZipCreateCommand">
       <point x="-40.33333333333337" y="-48.5" />
       <point x="800.2813155136269" y="961.0" />
-      <point x="419.09355345911973" y="961.0" />
+      <point x="419.0935534591197" y="961.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.Operation">
@@ -232,29 +232,29 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipExtractCommand" target="com.javarush.task.task31.task3110.ZipFileManager">
       <point x="19.625" y="-25.5" />
-      <point x="262.2185534591198" y="740.0" />
-      <point x="322.4060534591198" y="740.0" />
-      <point x="322.4060534591198" y="619.0" />
+      <point x="262.2185534591197" y="740.0" />
+      <point x="322.4060534591197" y="740.0" />
+      <point x="322.4060534591197" y="619.0" />
       <point x="554.3852201257864" y="619.0" />
       <point x="-147.0" y="137.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.command.Command">
       <point x="121.0" y="-48.5" />
-      <point x="961.6146488469602" y="981.0" />
-      <point x="1404.291928721174" y="981.0" />
+      <point x="961.6146488469601" y="981.0" />
+      <point x="1404.2919287211737" y="981.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipCreateCommand" target="com.javarush.task.task31.task3110.ConsoleHelper">
       <point x="-19.5" y="-25.5" />
-      <point x="399.59355345911973" y="720.0" />
-      <point x="311.4060534591198" y="720.0" />
-      <point x="311.4060534591198" y="265.0" />
+      <point x="399.5935534591197" y="720.0" />
+      <point x="311.4060534591197" y="720.0" />
+      <point x="311.4060534591197" y="265.0" />
       <point x="976.8333333333335" y="265.0" />
       <point x="-68.66666666666663" y="59.0" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipAddCommand" target="com.javarush.task.task31.task3110.ConsoleHelper">
       <point x="54.0" y="-25.5" />
-      <point x="894.6146488469602" y="760.0" />
+      <point x="894.6146488469601" y="760.0" />
       <point x="1074.98964884696" y="760.0" />
       <point x="1074.98964884696" y="285.0" />
       <point x="1045.5" y="285.0" />
@@ -262,20 +262,20 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipExtractCommand" target="com.javarush.task.task31.task3110.command.ZipCommand">
       <point x="58.875" y="-25.5" />
-      <point x="301.4685534591198" y="750.0" />
+      <point x="301.4685534591197" y="750.0" />
       <point x="748.1840408805033" y="750.0" />
       <point x="-87.20000000000005" y="25.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.ZipFileManager" target="com.javarush.task.task31.task3110.exception">
-      <point x="-142.91666666666657" y="-137.0" />
+      <point x="-142.91666666666652" y="-137.0" />
       <point x="558.4685534591199" y="225.0" />
       <point x="319.8125" y="225.0" />
       <point x="52.0" y="14.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.Archiver" target="com.javarush.task.task31.task3110.CommandExecutor">
-      <point x="25.375" y="-36.5" />
-      <point x="478.2602201257864" y="1128.0" />
-      <point x="840.6146488469602" y="1128.0" />
+      <point x="25.374999999999943" y="-36.5" />
+      <point x="478.2602201257863" y="1128.0" />
+      <point x="840.6146488469601" y="1128.0" />
       <point x="0.0" y="48.5" />
     </edge>
     <edge source="com.javarush.task.task31.task3110.command.ZipCommand" target="com.javarush.task.task31.task3110.ZipFileManager">
@@ -290,19 +290,21 @@
     </edge>
     <edge source="com.javarush.task.task31.task3110.CommandExecutor" target="com.javarush.task.task31.task3110.command.ZipExtractCommand">
       <point x="-80.66666666666674" y="-48.5" />
-      <point x="759.9479821802935" y="971.0" />
-      <point x="242.5935534591198" y="971.0" />
+      <point x="759.9479821802934" y="971.0" />
+      <point x="242.59355345911968" y="971.0" />
       <point x="0.0" y="25.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.4" x="1091.0506666666665" y="786.7559999999999" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.4444444444444444" x="784.5" y="615.5" />
+  <SelectedNodes>
+    <node>com.javarush.task.task31.task3110.FileProperties</node>
+  </SelectedNodes>
   <Categories>
-    <Category>Inner Classes</Category>
     <Category>Fields</Category>
+    <Category>Inner Classes</Category>
     <Category>Properties</Category>
-    <Category>Constructors</Category>
     <Category>Methods</Category>
+    <Category>Constructors</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
