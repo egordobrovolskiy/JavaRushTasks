@@ -12,19 +12,32 @@ public class Figure {
     }
 
     public void left() {
-
+        x = x - 1;
+        if (!isCurrentPositionAvailable()) {
+            x = x +1;
+        }
     }
 
     public void right() {
-
+        x = x + 1;
+        if (!isCurrentPositionAvailable()) {
+            x = x - 1;
+        }
     }
 
     public void down() {
+        y = y + 1;
+        if (!isCurrentPositionAvailable()) {
+            y = y - 1;
+        }
 
     }
 
     public void up() {
-
+        y = y - 1;
+        if (!isCurrentPositionAvailable()) {
+            y = y + 1;
+        }
     }
 
     public void rotate() {
