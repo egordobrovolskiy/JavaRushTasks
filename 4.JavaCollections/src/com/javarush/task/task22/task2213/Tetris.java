@@ -8,4 +8,11 @@ public class Tetris {
     private Field field;
     private Figure figure;
 
+    public Field getField() {
+        return field;
+    }
+
+    public Figure getFigure() {
+        return figure;
+    }
 }
