@@ -1,5 +1,7 @@
 package com.javarush.task.task25.task2515;
 
+import static sun.swing.MenuItemLayoutHelper.max;
+
 public abstract class BaseObject {
 
     private double x;
@@ -13,6 +15,18 @@ public abstract class BaseObject {
         this.y = y;
         this.radius = radius;
         this.isAlive = true;
+    }
+
+    public abstract void draw();
+
+    public abstract void move();
+
+    public void die() {
+        this.isAlive = false;
+    }
+
+    public boolean isIntersect(BaseObject o) {
+        return ((o.x - this.x)*(o.x - this.x) + (o.y - this.y)*(o.y - this.y)) <(max((int) o.radius,(int) this.radius)*max((int) o.radius,(int) this.radius));
     }
 
     public boolean isAlive() {
