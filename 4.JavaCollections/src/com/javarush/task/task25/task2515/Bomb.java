@@ -5,7 +5,7 @@ public class Bomb extends BaseObject {
         super(x, y, radius);
     }
 
-
+    
     public void draw() {
 
     }
