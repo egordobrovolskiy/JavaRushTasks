@@ -20,6 +20,18 @@ public class Space {
         
     }
 
+    public void run() {
+
+    }
+
+    public void draw() {
+
+    }
+
+    public void sleep(int ms) {
+        
+    }
+
     public void setShip(SpaceShip ship) {
         this.ship = ship;
     }
