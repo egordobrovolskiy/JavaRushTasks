@@ -5,7 +5,6 @@ public class SpaceShip extends BaseObject {
         super(x, y, radius);
     }
 
-    @Override
     public void draw() {
 
     }

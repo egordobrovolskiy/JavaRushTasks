@@ -5,9 +5,9 @@ public class Ufo extends BaseObject {
         super(x, y, radius);
     }
 
-    @Override
-    public void draw() {
 
+    public void draw() {
+        
     }
 
     @Override
