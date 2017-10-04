@@ -1,7 +1,7 @@
 package com.javarush.task.task25.task2515;
 
-public class Canvas {
 
+public class Canvas {
     private int width;
     private int height;
     private char[][] matrix;
@@ -9,52 +9,47 @@ public class Canvas {
     public Canvas(int width, int height) {
         this.width = width;
         this.height = height;
-        this.matrix = new char[height+2][width+2];
+        this.matrix = new char[height + 2][width + 2];
     }
 
     public void clear() {
+        this.matrix = new char[height + 2][width + 2];
+    }
+
+    public void drawMatrix(double x, double y, int[][] matrix, char c) {
         for (int i = 0; i < matrix.length; i++) {
-            for (int k = 0; k < matrix[0].length; k++) {
-            matrix[i][k] = ' ';
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] != 0) {
+                    setPoint(x + j, y + i, c);
+                }
             }
+        }
+    }
+
+    public void setPoint(double x, double y, char c) {
+        int xRounded = (int) Math.round(x);
+        int yRounded = (int) Math.round(y);
+        if (xRounded >= 0 && xRounded < matrix[0].length && yRounded >= 0 && yRounded < matrix.length) {
+            matrix[yRounded][xRounded] = c;
         }
     }
 
     public void print() {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int k = 0; k < matrix[0].length; k++) {
-                System.out.print(matrix[i][k]);
+        System.out.println();
+
+        for (int i = 0; i < height + 2; i++) {
+            for (int j = 0; j < width + 2; j++) {
+                System.out.print(" ");
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
             }
+
             System.out.println();
         }
+
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println();
-    }
-
-
-
-    public void setPoint(double x, double y, char c) {
-
-        if (x < 0 || y < 0 || y > matrix.length || x > matrix[0].length) {
-        } else {
-            int iX = (int) Math.round(x);
-            int iY = (int) Math.round(y);
-           matrix[iY][iX] = c;
-        }
-
-    }
-    public void drawMatrix(double x, double y, int[][] matrix, char c) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int k = 0; k < matrix[0].length; k++) {
-                if (matrix[i][k] != 0) {
-                    setPoint(x + k, y + i, c);
-                }
-            }
-        }
-
-
     }
 
     public int getWidth() {
