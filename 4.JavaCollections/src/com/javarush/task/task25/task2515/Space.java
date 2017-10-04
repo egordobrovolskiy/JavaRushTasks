@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Space {
 
+    public static Space game;
+
     private int width;
     private int height;
     private SpaceShip ship;
@@ -15,6 +17,7 @@ public class Space {
         this.width = width;
         this.height = height;
     }
+
 
     public static void main(String[] args) {
         
