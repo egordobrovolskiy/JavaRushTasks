@@ -9,12 +9,35 @@ public class Canvas {
     public Canvas(int width, int height) {
         this.width = width;
         this.height = height;
-        this.matrix = new char[height+2][width+2];;
+        this.matrix = new char[height+2][width+2];
     }
+
+    public void clear() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int k = 0; k < matrix[0].length; k++) {
+            matrix[i][k] = ' ';
+            }
+        }
+    }
+
+    public void print() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int k = 0; k < matrix[0].length; k++) {
+                System.out.print(matrix[i][k]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+    }
+
+
 
     public void setPoint(double x, double y, char c) {
 
-        if (x < 0 || y < 0 || y >= matrix.length || x >= matrix[0].length) {
+        if (x < 0 || y < 0 || y > matrix.length || x > matrix[0].length) {
         } else {
             int iX = (int) Math.round(x);
             int iY = (int) Math.round(y);
