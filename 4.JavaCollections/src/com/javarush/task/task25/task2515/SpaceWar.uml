@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="373.5" y="0.0">com.javarush.task.task25.task2515.BaseObject</node>
+    <node x="0.0" y="331.0">com.javarush.task.task25.task2515.Space</node>
+    <node x="519.0" y="190.0">com.javarush.task.task25.task2515.Rocket</node>
+    <node x="237.0" y="331.0">com.javarush.task.task25.task2515.Canvas</node>
+    <node x="103.00318794377631" y="30.858281408491536">com.javarush.task.task25.task2515.KeyboardObserver</node>
+    <node x="242.0" y="212.5">com.javarush.task.task25.task2515.SpaceShip</node>
+    <node x="778.0" y="190.0">com.javarush.task.task25.task2515.Bomb</node>
+    <node x="0.0" y="212.5">com.javarush.task.task25.task2515.Ufo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.javarush.task.task25.task2515.SpaceShip" target="com.javarush.task.task25.task2515.BaseObject">
+      <point x="0.0" y="-25.5" />
+      <point x="370.5" y="170.0" />
+      <point x="471.75" y="170.0" />
+      <point x="-32.75" y="70.0" />
+    </edge>
+    <edge source="com.javarush.task.task25.task2515.Ufo" target="com.javarush.task.task25.task2515.BaseObject">
+      <point x="0.0" y="-25.5" />
+      <point x="111.0" y="160.0" />
+      <point x="406.25" y="160.0" />
+      <point x="-98.25" y="70.0" />
+    </edge>
+    <edge source="com.javarush.task.task25.task2515.Rocket" target="com.javarush.task.task25.task2515.BaseObject">
+      <point x="0.0" y="-48.0" />
+      <point x="638.5" y="170.0" />
+      <point x="537.25" y="170.0" />
+      <point x="32.75" y="70.0" />
+    </edge>
+    <edge source="com.javarush.task.task25.task2515.Bomb" target="com.javarush.task.task25.task2515.BaseObject">
+      <point x="0.0" y="-48.0" />
+      <point x="895.5" y="160.0" />
+      <point x="602.75" y="160.0" />
+      <point x="98.25" y="70.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6680542110358181" x="585.0" y="203.0" />
+  <SelectedNodes>
+    <node>com.javarush.task.task25.task2515.Ufo</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
