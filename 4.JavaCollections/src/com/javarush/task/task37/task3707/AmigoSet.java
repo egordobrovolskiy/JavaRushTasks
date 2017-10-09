@@ -1,5 +1,8 @@
 package com.javarush.task.task37.task3707;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.*;
 import java.util.function.Consumer;
@@ -95,5 +98,33 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
             throw new InternalError(e);
         }
         return copy;
+    }
+
+    private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
+
+        objectOutputStream.defaultWriteObject();
+
+//        objectOutputStream.writeObject(map.size());
+//        for(E e : map.keySet()){
+//            objectOutputStream.writeObject(e);
+//        }
+//        objectOutputStream.writeObject(HashMapReflectionHelper.callHiddenMethod(map,"capacity"));
+//        objectOutputStream.writeObject(HashMapReflectionHelper.callHiddenMethod(map,"loadFactor"));
+    }
+
+    private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+        objectInputStream.defaultReadObject();
+
+//        int size = (int)objectInputStream.readObject();
+//        Set<E> set = new HashSet<>();
+//        for(int i = 0; i < size; i++){
+//            set.add((E)objectInputStream.readObject());
+//        }
+//        int capacity = (int)objectInputStream.readObject();
+//        float loadFactor = (float)objectInputStream.readObject();
+//        map = new HashMap<>(capacity,loadFactor);
+//        for(E e : set){
+//            map.put(e,PRESENT);
+//        }
     }
 }
