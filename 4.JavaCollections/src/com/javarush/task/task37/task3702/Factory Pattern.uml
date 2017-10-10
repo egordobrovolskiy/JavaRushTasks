@@ -3,54 +3,68 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="212.0">com.javarush.task.task37.task3702.male.MaleFactory</node>
-    <node x="460.0" y="0.0">com.javarush.task.task37.task3702.Human</node>
-    <node x="342.0" y="90.0">com.javarush.task.task37.task3702.female.KidGirl</node>
-    <node x="0.0" y="310.0">com.javarush.task.task37.task3702.Solution</node>
-    <node x="171.0" y="90.0">com.javarush.task.task37.task3702.female.TeenGirl</node>
-    <node x="684.0" y="102.0">com.javarush.task.task37.task3702.male.Man</node>
-    <node x="855.0" y="90.0">com.javarush.task.task37.task3702.male.TeenBoy</node>
-    <node x="513.0" y="90.0">com.javarush.task.task37.task3702.male.KidBoy</node>
-    <node x="228.0" y="212.0">com.javarush.task.task37.task3702.female.FemaleFactory</node>
-    <node x="0.0" y="102.0">com.javarush.task.task37.task3702.female.Woman</node>
+    <node x="280.73351648351644" y="258.5">com.javarush.task.task37.task3702.male.MaleFactory</node>
+    <node x="589.4832112332113" y="0.0">com.javarush.task.task37.task3702.Human</node>
+    <node x="1093.927960927961" y="100.0">com.javarush.task.task37.task3702.female.KidGirl</node>
+    <node x="516.9832112332113" y="247.0">com.javarush.task.task37.task3702.Solution</node>
+    <node x="540.9832112332113" y="112.0">com.javarush.task.task37.task3702.AbstractFactory</node>
+    <node x="751.9279609279611" y="100.0">com.javarush.task.task37.task3702.female.TeenGirl</node>
+    <node x="-25.5" y="-7.5">com.javarush.task.task37.task3702.FactoryProducer</node>
+    <node x="171.0" y="112.0">com.javarush.task.task37.task3702.male.Man</node>
+    <node x="0.0" y="100.0">com.javarush.task.task37.task3702.male.TeenBoy</node>
+    <node x="342.0" y="100.0">com.javarush.task.task37.task3702.male.KidBoy</node>
+    <node x="880.5697496947497" y="258.5">com.javarush.task.task37.task3702.female.FemaleFactory</node>
+    <node x="922.9279609279611" y="112.0">com.javarush.task.task37.task3702.female.Woman</node>
   </nodes>
   <notes />
   <edges>
     <edge source="com.javarush.task.task37.task3702.male.KidBoy" target="com.javarush.task.task37.task3702.Human">
       <point x="0.0" y="-38.5" />
-      <point x="588.5" y="70.0" />
-      <point x="510.16666666666663" y="70.0" />
-      <point x="7.166666666666686" y="15.0" />
-    </edge>
-    <edge source="com.javarush.task.task37.task3702.female.Woman" target="com.javarush.task.task37.task3702.Human">
-      <point x="0.0" y="-26.5" />
-      <point x="75.5" y="50.0" />
-      <point x="467.16666666666663" y="50.0" />
-      <point x="-35.83333333333334" y="15.0" />
+      <point x="417.5" y="70.0" />
+      <point x="613.3721001221002" y="70.0" />
+      <point x="-19.111111111111086" y="15.0" />
     </edge>
     <edge source="com.javarush.task.task37.task3702.male.TeenBoy" target="com.javarush.task.task37.task3702.Human">
       <point x="0.0" y="-38.5" />
-      <point x="930.5" y="50.0" />
-      <point x="538.8333333333334" y="50.0" />
-      <point x="35.83333333333337" y="15.0" />
-    </edge>
-    <edge source="com.javarush.task.task37.task3702.female.TeenGirl" target="com.javarush.task.task37.task3702.Human">
-      <point x="0.0" y="-38.5" />
-      <point x="246.5" y="60.0" />
-      <point x="481.5" y="60.0" />
-      <point x="-21.5" y="15.0" />
+      <point x="75.5" y="50.0" />
+      <point x="594.2609890109891" y="50.0" />
+      <point x="-38.22222222222223" y="15.0" />
     </edge>
     <edge source="com.javarush.task.task37.task3702.female.KidGirl" target="com.javarush.task.task37.task3702.Human">
       <point x="0.0" y="-38.5" />
-      <point x="417.5" y="70.0" />
-      <point x="495.8333333333333" y="70.0" />
-      <point x="-7.166666666666657" y="15.0" />
+      <point x="1169.427960927961" y="60.0" />
+      <point x="661.149877899878" y="60.0" />
+      <point x="28.666666666666742" y="15.0" />
+    </edge>
+    <edge source="com.javarush.task.task37.task3702.female.FemaleFactory" target="com.javarush.task.task37.task3702.AbstractFactory">
+      <point x="-78.42857142857144" y="-26.5" />
+      <point x="893.6411782661783" y="227.0" />
+      <point x="693.4832112332113" y="227.0" />
+      <point x="61.0" y="26.5" />
     </edge>
     <edge source="com.javarush.task.task37.task3702.male.Man" target="com.javarush.task.task37.task3702.Human">
       <point x="0.0" y="-26.5" />
-      <point x="759.5" y="60.0" />
-      <point x="524.5" y="60.0" />
-      <point x="21.5" y="15.0" />
+      <point x="246.5" y="60.0" />
+      <point x="603.8165445665447" y="60.0" />
+      <point x="-28.66666666666663" y="15.0" />
+    </edge>
+    <edge source="com.javarush.task.task37.task3702.female.Woman" target="com.javarush.task.task37.task3702.Human">
+      <point x="0.0" y="-26.5" />
+      <point x="998.4279609279611" y="70.0" />
+      <point x="651.5943223443223" y="70.0" />
+      <point x="19.111111111111086" y="15.0" />
+    </edge>
+    <edge source="com.javarush.task.task37.task3702.female.TeenGirl" target="com.javarush.task.task37.task3702.Human">
+      <point x="0.0" y="-38.5" />
+      <point x="827.4279609279611" y="80.0" />
+      <point x="642.0387667887669" y="80.0" />
+      <point x="9.555555555555543" y="15.0" />
+    </edge>
+    <edge source="com.javarush.task.task37.task3702.male.MaleFactory" target="com.javarush.task.task37.task3702.AbstractFactory">
+      <point x="78.42857142857144" y="-26.5" />
+      <point x="450.6620879120879" y="227.0" />
+      <point x="571.4832112332113" y="227.0" />
+      <point x="-61.0" y="26.5" />
     </edge>
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="247.0" y="128.0" />
