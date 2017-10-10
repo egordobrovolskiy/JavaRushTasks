@@ -3,24 +3,42 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="196.0" y="244.0">com.javarush.task.task37.task3702.Human</node>
-    <node x="-288.5" y="-87.5">com.javarush.task.task37.task3702.Solution</node>
-    <node x="0.0" y="244.0">com.javarush.task.task37.task3702.male.Man</node>
-    <node x="0.0" y="122.0">com.javarush.task.task37.task3702.male.TeenBoy</node>
-    <node x="0.0" y="0.0">com.javarush.task.task37.task3702.male.KidBoy</node>
+    <node x="-90.0" y="-14.0">com.javarush.task.task37.task3702.male.MaleFactory</node>
+    <node x="203.5" y="0.0">com.javarush.task.task37.task3702.Human</node>
+    <node x="0.0" y="202.0">com.javarush.task.task37.task3702.Solution</node>
+    <node x="342.0" y="92.0">com.javarush.task.task37.task3702.male.Man</node>
+    <node x="171.0" y="80.0">com.javarush.task.task37.task3702.male.TeenBoy</node>
+    <node x="0.0" y="80.0">com.javarush.task.task37.task3702.male.KidBoy</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <edges>
+    <edge source="com.javarush.task.task37.task3702.male.KidBoy" target="com.javarush.task.task37.task3702.Human">
+      <point x="0.0" y="-38.5" />
+      <point x="75.5" y="55.0" />
+      <point x="217.83333333333334" y="55.0" />
+      <point x="-28.666666666666657" y="15.0" />
+    </edge>
+    <edge source="com.javarush.task.task37.task3702.male.TeenBoy" target="com.javarush.task.task37.task3702.Human">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.javarush.task.task37.task3702.male.Man" target="com.javarush.task.task37.task3702.Human">
+      <point x="0.0" y="-26.5" />
+      <point x="417.5" y="55.0" />
+      <point x="275.1666666666667" y="55.0" />
+      <point x="28.666666666666686" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="246.5" y="127.5" />
   <SelectedNodes>
     <node>com.javarush.task.task37.task3702.male.KidBoy</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
-    <Category>Constructors</Category>
-    <Category>Methods</Category>
-    <Category>Properties</Category>
     <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
