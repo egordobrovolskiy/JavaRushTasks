@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="196.0" y="244.0">com.javarush.task.task37.task3702.Human</node>
+    <node x="-288.5" y="-87.5">com.javarush.task.task37.task3702.Solution</node>
+    <node x="0.0" y="244.0">com.javarush.task.task37.task3702.male.Man</node>
+    <node x="0.0" y="122.0">com.javarush.task.task37.task3702.male.TeenBoy</node>
+    <node x="0.0" y="0.0">com.javarush.task.task37.task3702.male.KidBoy</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <SelectedNodes>
+    <node>com.javarush.task.task37.task3702.male.KidBoy</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
