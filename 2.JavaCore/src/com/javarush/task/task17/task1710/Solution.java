@@ -1,6 +1,5 @@
 package com.javarush.task.task17.task1710;
 
-import javafx.scene.input.DataFormat;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
