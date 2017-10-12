@@ -22,10 +22,7 @@ public class Shortener {
     }
 
     public synchronized String getString(Long id) {
-//        if (storageStrategy.containsKey(id)) {
             return storageStrategy.getValue(id);
-//        }
-//        return null;
     }
 
 
