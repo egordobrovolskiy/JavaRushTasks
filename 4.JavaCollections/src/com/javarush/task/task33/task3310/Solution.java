@@ -22,6 +22,9 @@ public class Solution {
 
         StorageStrategy strategyHasBiMap = new HashBiMapStorageStrategy();
         testStrategy(strategyHasBiMap, 10000);
+
+        StorageStrategy strategyDualHashBiMap = new DualHashBidiMapStorageStrategy();
+        testStrategy(strategyDualHashBiMap, 10000);
     }
 
     public static Set<Long> getIds(Shortener shortener, Set<String> strings) {
