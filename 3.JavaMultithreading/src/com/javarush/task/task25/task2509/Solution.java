@@ -17,7 +17,4 @@ public class Solution extends ThreadPoolExecutor {
             return super.newTaskFor(callable);
         }
     }
-
-    public static void main(String[] args) {
-    }
 }

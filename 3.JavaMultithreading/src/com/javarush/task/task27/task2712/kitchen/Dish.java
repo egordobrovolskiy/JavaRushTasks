@@ -1,6 +1,8 @@
 package com.javarush.task.task27.task2712.kitchen;
 
-public enum Dish {
+import java.util.Arrays;
+
+public enum  Dish {
     Fish(25),
     Steak(30),
     Soup(15),
@@ -9,16 +11,15 @@ public enum Dish {
 
     private int duration;
 
-
     Dish(int duration) {
         this.duration = duration;
     }
 
-    public static String allDishesToString() {
-        return new StringBuilder().append(Fish).append(Steak).append(Soup).append(Juice).append(Water).toString();
-    }
-
     public int getDuration() {
         return duration;
+    }
+
+    public static String allDishesToString(){
+        return Arrays.toString(Dish.values());
     }
 }

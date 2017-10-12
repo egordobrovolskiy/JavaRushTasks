@@ -10,26 +10,17 @@ public class Order {
     protected List<Dish> dishes;
     private final Tablet tablet;
 
-    public int getTotalCookingTime() {
-        int cookingTime = 0;
-        for (Dish dish: dishes) {
-            cookingTime += dish.getDuration();
-        }
-        return cookingTime;
-    }
-
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
-        this.dishes = ConsoleHelper.getAllDishesForOrder();
+        initDishes();
     }
 
-    public boolean isEmpty() {
-        return dishes.isEmpty();
-    }
-
-    @Override
-    public String toString() {
-        return dishes.isEmpty() ? "" : "Your order: " + dishes + " of " + tablet;
+    public int getTotalCookingTime() {
+        int totalTime = 0;
+        for (Dish dish : dishes) {
+            totalTime += dish.getDuration();
+        }
+        return totalTime;
     }
 
     public Tablet getTablet() {
@@ -38,5 +29,34 @@ public class Order {
 
     public List<Dish> getDishes() {
         return dishes;
+    }
+
+    protected void initDishes() throws IOException {
+        ConsoleHelper.writeMessage(Dish.allDishesToString());
+        dishes = ConsoleHelper.getAllDishesForOrder();
+    }
+
+    public boolean isEmpty() {
+        if (dishes.size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        if (dishes.size() == 0) {
+            return "";
+        }
+        StringBuffer stringBuffer = new StringBuffer();
+        for (Dish dish : dishes) {
+            stringBuffer.append(dish);
+            stringBuffer.append(", ");
+        }
+        String dishesInOrder = stringBuffer.toString().substring(0, stringBuffer.toString().length() - 2);
+
+        return "Your order: " + dishesInOrder + " of " + tablet.toString() +
+                ", cooking time " + getTotalCookingTime() + "min";
     }
 }
