@@ -36,18 +36,17 @@ public class SpeedTest {
         Shortener shortener1 = new Shortener(new HashMapStorageStrategy());
         Shortener shortener2 = new Shortener(new HashBiMapStorageStrategy());
         Set<String> origStrings = new HashSet<>();
-        Set<Long> ids1 = new HashSet<>();
-        Set<Long> ids2 = new HashSet<>();
+        Set<Long> ids = new HashSet<>();
         for (int i = 0; i < 10000; i++) {
             origStrings.add(Helper.generateRandomString());
         }
 
-        long timeIdHasMap = getTimeForGettingIds(shortener1, origStrings, ids1);
-        long timeIdHasBiMap = getTimeForGettingIds(shortener2, origStrings, ids2);
-        Assert.assertTrue(timeIdHasMap > timeIdHasBiMap);
+        long timeIdHasMap = getTimeForGettingIds(shortener1, origStrings, ids);
+        long timeIdHasBiMap = getTimeForGettingIds(shortener2, origStrings, ids);
+        Assert.assertNotEquals(timeIdHasBiMap, timeIdHasMap);
 
-        long timeValueHasMap = getTimeForGettingStrings(shortener1, ids1, new HashSet<>());
-        long timeValueHasBiMap = getTimeForGettingStrings(shortener2, ids2, new HashSet<>());
+        long timeValueHasMap = getTimeForGettingStrings(shortener1, ids, origStrings);
+        long timeValueHasBiMap = getTimeForGettingStrings(shortener2, ids, origStrings);
         Assert.assertEquals(timeValueHasBiMap, timeValueHasMap, 30);
     }
 }
