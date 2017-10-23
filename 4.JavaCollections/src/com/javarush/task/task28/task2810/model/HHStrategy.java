@@ -20,7 +20,7 @@ public class HHStrategy implements Strategy {
         if (searchString == null)
             return Collections.emptyList();
         try {
-            Document doc = Jsoup.connect(URL_FORMAT).get();
+            Document doc = Jsoup.connect(URL_FORMAT).userAgent("Chrome (jsoup)").referrer("?").get();
         } catch (IOException e) {
             e.printStackTrace();
         }
