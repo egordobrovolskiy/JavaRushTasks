@@ -24,12 +24,13 @@ public class Controller {
     }
 
     public void scan() {
-        ArrayList<Vacancy> allVacancies = new ArrayList<>();
-
-        for (Provider provider : providers)
-            allVacancies.addAll(provider.getJavaVacancies(""));
-
-        System.out.println(allVacancies.size());
+        List<Vacancy> list = new ArrayList<>();
+        for (int i=0;i<providers.length;i++){
+            for (Vacancy vacancy : providers[i].getJavaVacancies("")){
+                list.add(vacancy);
+            }
+        }
+        System.out.println(list.size());
     }
 }
 
