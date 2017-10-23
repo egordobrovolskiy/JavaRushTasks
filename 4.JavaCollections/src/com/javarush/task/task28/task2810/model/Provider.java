@@ -3,6 +3,8 @@ package com.javarush.task.task28.task2810.model;
 public class Provider {
     private Strategy strategy;
 
+    public Provider() {}
+
     public Provider(Strategy strategy) {
         this.strategy = strategy;
     }
