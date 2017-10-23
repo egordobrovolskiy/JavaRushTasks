@@ -8,16 +8,13 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 
-public class HHStrategy implements Strategy {
-    //private static final String URL_FORMAT = "https://hh.ua/search/vacancy";
-    //private static final String URL_FORMAT = "https://hh.ua/search/vacancy?text=java+Junior+android&only_with_salary=false&enable_snippets=true&clusters=true&salary=";
-    private static final String URL_FORMAT = "https://javarush.ru/testdata/big28data.html";
-    //private static final String URL_FORMAT = "https://javarush.ru/search/vacancy?text=java+odessa&currency_code=UAH&clusters=true&page=1";
+public class MoikrugStrategy implements Strategy {
+    //private static final String URL_FORMAT = "https://moikrug.ru/vacancies?q=java&page=2";
+    private static final String URL_FORMAT= "https://moikrug.ru/vacancies?q=java+%s&page=%d";
+    //private static final String URL_FORMAT = "http://javarush.ru/testdata/big28data2.html";
 
     @Override
     public List<Vacancy> getVacancies(String searchString)
@@ -56,7 +53,7 @@ public class HHStrategy implements Strategy {
     }
 
     protected Document getDocument(String searchString, int page) throws IOException {
-        String url = String.format("%s?text=%s&page=%s",URL_FORMAT, searchString, page);
+        String url = String.format(URL_FORMAT, searchString, page);
         return Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36")
                 .timeout(5000)

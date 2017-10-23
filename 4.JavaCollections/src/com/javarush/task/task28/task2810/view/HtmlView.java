@@ -12,8 +12,8 @@ import java.util.List;
 public class HtmlView implements View {
 
     Controller controller;
-    private final String filePath = "./src/" + this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
-
+//    private final String filePath = "./src/" + this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
+private final String filePath = "C://Users//dobro//IdeaProjects//JavaRushTasks//4.JavaCollections//src//com//javarush//task//task28//task2810//view//vacancies.html";
     @Override
     public void update(List<Vacancy> vacancies) {
         try {
