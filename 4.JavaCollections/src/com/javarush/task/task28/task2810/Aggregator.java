@@ -12,6 +12,7 @@ public class Aggregator {
         Provider HHprovider = new Provider(new HHStrategy());
         Provider moiKrugProvider = new Provider(new MoikrugStrategy());
         Model model = new Model(view, HHprovider, moiKrugProvider);
+//        Model model = new Model(view, HHprovider);
         Controller controller = new Controller(model);
         view.setController(controller);
         view.userCitySelectEmulationMethod();

@@ -5,23 +5,27 @@ import com.javarush.task.task28.task2810.vo.Vacancy;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 public class HtmlView implements View {
 
-    Controller controller;
-//    private final String filePath = "./src/" + this.getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
-private final String filePath = "C://Users//dobro//IdeaProjects//JavaRushTasks//4.JavaCollections//src//com//javarush//task//task28//task2810//view//vacancies.html";
+    private Controller controller;
+    //private final String filePath = "./src/" + getClass().getPackage().getName().replaceAll("\\.", "/") + "/vacancies.html";
+    private final String filePath = "C:\\Users\\dobro\\IdeaProjects\\JavaRushTasks\\4.JavaCollections\\src\\com\\javarush\\task\\task28\\task2810\\view\\vacancies.html";
+
     @Override
     public void update(List<Vacancy> vacancies) {
+        System.out.println(vacancies.size());
         try {
-            updateFile(getUpdatedFileContent(vacancies));
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Some exception");
+            String newFile = getUpdatedFileContent(vacancies);
+            updateFile(newFile);
         }
+        catch (Exception e){e.printStackTrace();}
     }
 
     @Override
@@ -29,51 +33,64 @@ private final String filePath = "C://Users//dobro//IdeaProjects//JavaRushTasks//
         this.controller = controller;
     }
 
-    public void userCitySelectEmulationMethod() {
+    public void userCitySelectEmulationMethod(){
         controller.onCitySelect("Kiev");
     }
 
-    protected Document getDocument() throws IOException {
-        return Jsoup.parse(new File(filePath), "UTF-8");
-    }
-
-    private String getUpdatedFileContent(List<Vacancy> vacancies) {
-        Document document = null;
+    private String getUpdatedFileContent(List<Vacancy> list){
+        Document document;
         try {
             document = getDocument();
-            Element templateOriginal = document.getElementsByClass("template").first();
-            Element copyTemplate = templateOriginal.clone();
-            copyTemplate.removeAttr("style");
-            copyTemplate.removeClass("template");
-            document.select("tr[class=vacancy]").remove().not("tr[class=vacancy template");
 
-            for (Vacancy vacancy : vacancies) {
+            Elements elementVacancy = document.getElementsByAttributeValue("class", "vacancy");
+            for (int i=0;i<elementVacancy.size();i++){
+                elementVacancy.get(i).remove();
+            }
 
-                Element localClone = copyTemplate.clone();
+            Element templateElement = document.getElementsByClass("template").first();
+            Element cloneTemplateElement = templateElement.clone();
+            cloneTemplateElement.removeClass("template");
+            cloneTemplateElement.removeAttr("style");
 
-                localClone.getElementsByClass("city").first().text(vacancy.getCity());
-                localClone.getElementsByClass("companyName").first().text(vacancy.getCompanyName());
-                localClone.getElementsByClass("salary").first().text(vacancy.getSalary());
-                Element link =localClone.getElementsByTag("a").first();
-                link.text(vacancy.getTitle());
-                link.attr("href", vacancy.getUrl());
+            Vacancy vacancy;
 
-                templateOriginal.before(localClone.outerHtml());
+            for (int i=0;i<list.size();i++){
+                vacancy = list.get(i);
+                Element e = cloneTemplateElement.clone();
+
+                //add city
+                e.getElementsByClass("city").first().text(vacancy.getCity());
+                // add companyName
+                e.getElementsByClass("companyName").first().text(vacancy.getCompanyName());
+                // add salary
+                e.getElementsByClass("salary").first().text(vacancy.getSalary());
+                //add url
+                Element elementLink = e.getElementsByClass("title").first();
+                elementLink.text(vacancy.getTitle());
+                elementLink.attr("href", vacancy.getUrl());
+
+                templateElement.before(e.outerHtml());
             }
         } catch (IOException e) {
             e.printStackTrace();
             return "Some exception occurred";
+
+
+
         }
-        return document.html();
+        return document.toString();
     }
 
-    private void updateFile(String file) {
-        try {
-            OutputStream outputStream = new FileOutputStream(filePath);
-            outputStream.write(file.getBytes());
-            outputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+    protected Document getDocument() throws IOException{
+
+        return Jsoup.parse(new File(filePath), "UTF-8");
+    }
+
+
+    private void updateFile(String s) {
+
+        try (FileOutputStream outputStream = new FileOutputStream(filePath)){
+            outputStream.write(s.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
