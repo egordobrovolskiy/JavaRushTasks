@@ -1,5 +1,6 @@
 package com.javarush.task.task26.task2613;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,5 +15,9 @@ public class CurrencyManipulatorFactory {
             currencyMap.put(currencyCode, new CurrencyManipulator(currencyCode));
         }
         return currencyMap.get(currencyCode);
+    }
+
+    public static Collection<CurrencyManipulator> getAllCurrencyManipulators() {
+        return currencyMap.values();
     }
 }
