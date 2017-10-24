@@ -12,7 +12,9 @@ import java.util.List;
 
 public class MoikrugStrategy implements Strategy {
 
-    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?q=java+%s&page=%d";
+//    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?q=java+%s&page=%d";
+    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?q=java&location=%s&city_id=908&page=%d";
+//    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?city_id=&location=&page=2&q=java";
 
     @Override
     public List<Vacancy> getVacancies(String searchString) {
