@@ -4,12 +4,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyManipulator {
-    private String currencyCode;                  //код валюты, например, USD
-    private Map<Integer, Integer> denominations;  //это Map<номинал, количество>
+    private String currencyCode;                                    //код валюты, например, USD
+    private Map<Integer, Integer> denominations = new HashMap<>();  //это Map<номинал, количество>
 
     public CurrencyManipulator(String currencyCode) {
         this.currencyCode = currencyCode;
-        this.denominations = new HashMap<>();
+    }
+
+    public void addAmount(int denomination, int count) {
+        if (denominations.containsKey(denomination)) {
+            denominations.put(denomination, denominations.get(denomination) + count);
+        } else {
+            denominations.put(denomination, count);
+        }
     }
 
     public String getCurrencyCode() {

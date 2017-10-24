@@ -21,4 +21,45 @@ public class ConsoleHelper {
         }
         return result;
     }
+
+    public static String askCurrencyCode() {
+        {
+            String code = null;
+            writeMessage("Please choice currency code:");
+            while (true) {
+                code = readString();
+                if (code.length() == 3)
+                    break;
+                else
+                    writeMessage("Error, Please choice again:");
+
+            }
+            return code.toUpperCase();
+        }
+    }
+
+    public static String[] getValidTwoDigits(String currencyCode) throws IOException {
+        writeMessage("Input nominal and total:");
+
+        String[] input;
+        while (true) {
+            input = readString().split(" ");
+
+            int nominal = 0;
+            int total = 0;
+            try {
+                nominal = Integer.parseInt(input[0]);
+                total = Integer.parseInt(input[1]);
+            } catch (Exception e) {
+                writeMessage("Error, Repeat again:");
+                continue;
+            }
+            if (nominal <= 0 || total <= 0) {
+                writeMessage("Error, Repeat again:");
+                continue;
+            }
+            break;
+        }
+        return input;
+    }
 }
