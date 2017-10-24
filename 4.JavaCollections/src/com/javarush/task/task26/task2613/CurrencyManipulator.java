@@ -18,6 +18,13 @@ public class CurrencyManipulator {
             denominations.put(denomination, count);
         }
     }
+    public int getTotalAmount() {
+        int total = 0;
+        for (Map.Entry<Integer, Integer> pair : denominations.entrySet()) {
+            total += pair.getKey() * pair.getValue();
+        }
+        return total;
+    }
 
     public String getCurrencyCode() {
         return currencyCode;

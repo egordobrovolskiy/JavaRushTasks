@@ -12,5 +12,6 @@ public class CashMachine {
         String[] strs = ConsoleHelper.getValidTwoDigits(code);
         currencyManipulator = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(code);
         currencyManipulator.addAmount(Integer.parseInt(strs[0]), Integer.parseInt(strs[1]));
+        ConsoleHelper.writeMessage(String.valueOf(currencyManipulator.getTotalAmount()));
     }
 }
