@@ -62,4 +62,17 @@ public class ConsoleHelper {
         }
         return input;
     }
+
+    public static Operation askOperation() {
+        do {
+            writeMessage("Choice operation:\n1) INFO\n2) DEPOSIT\n3) WITHDRAW\n4) EXIT");
+            try {
+                int choice = Integer.parseInt(readString());
+                return Operation.getAllowableOperationByOrdinal(choice);
+            } catch (IllegalArgumentException e) {
+                writeMessage("You input wrong! Try Again.");
+                continue;
+            }
+        } while (true);
+    }
 }
