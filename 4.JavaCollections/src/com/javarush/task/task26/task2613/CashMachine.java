@@ -1,19 +1,24 @@
 package com.javarush.task.task26.task2613;
 
 import com.javarush.task.task26.task2613.command.CommandExecutor;
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
 import java.io.IOException;
 import java.util.Locale;
 
 public class CashMachine {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        Operation operation;
+        try {
+            Operation operation;
 
-        do {
-            operation = ConsoleHelper.askOperation();
-            CommandExecutor.execute(operation);
-        } while (operation != Operation.EXIT);
+            do {
+                operation = ConsoleHelper.askOperation();
+                CommandExecutor.execute(operation);
+            } while (operation != Operation.EXIT);
+        } catch (InterruptOperationException e) {
+            ConsoleHelper.writeMessage("Bay");
+        }
 
 //        Locale.setDefault(Locale.ENGLISH);
 //        CurrencyManipulator currencyManipulator;
