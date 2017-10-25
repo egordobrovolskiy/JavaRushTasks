@@ -35,5 +35,41 @@
     <orderEntry type="library" name="Simple Logging Facade for Java:1.7.25" level="project" />
     <orderEntry type="library" name="org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="jsoup-1.10.3" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="demo" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../org.apache.servicemix.bundles.httpcore-4.0-alpha6_1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="org.apache.servicemix.bundles.httpcore-4.0-alpha6_1" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../httpcore-4.0-alpha5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="httpcore-4.0-alpha5" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../httpclient-4.0-alpha1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="httpclient-4.0-alpha1" level="project" />
+    <orderEntry type="library" name="httpclient-4.5.3" level="project" />
+    <orderEntry type="library" name="apache-httpcomponents-httpcore.jar" level="project" />
+    <orderEntry type="library" name="httpcore-4.4.8" level="project" />
+    <orderEntry type="library" name="mail-1.4.7" level="project" />
   </component>
 </module>
