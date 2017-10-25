@@ -84,4 +84,8 @@ public class ConsoleHelper {
             }
         } while (true);
     }
+    public static void printExitMessage()
+    {
+        ConsoleHelper.writeMessage(res.getString("the.end"));
+    }
 }

@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 class DepositCommand implements Command{
 
-    private ResourceBundle res = ResourceBundle.getBundle(CashMachine.class.getPackage().getName()+".resources.deposit_en", Locale.ENGLISH);
+    private ResourceBundle res = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + "deposit_en", Locale.ENGLISH);
 
     @Override
     public void execute() throws InterruptOperationException {
