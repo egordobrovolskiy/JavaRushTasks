@@ -58,19 +58,18 @@ public class CurrencyManipulator {
                     break;
                 }
             }
-            if(countOfNominalForPut != 0)
-            {
-                if (countOfNominal - countOfNominalForPut == 0)
-                {
+            if(countOfNominalForPut != 0) {
+                if (countOfNominal - countOfNominalForPut == 0) {
                     tempMap.remove(nominal);
-                } else
-                {
+                } else {
                     tempMap.put(nominal, countOfNominal - countOfNominalForPut);
                 }
                 resultMap.put(nominal, countOfNominalForPut);
             }
         }
-        if(expectedAmount != 0) throw new NotEnoughMoneyException();
+        if(expectedAmount != 0) {
+            throw new NotEnoughMoneyException();
+        }
 
         denominations.clear();
         denominations.putAll(tempMap);

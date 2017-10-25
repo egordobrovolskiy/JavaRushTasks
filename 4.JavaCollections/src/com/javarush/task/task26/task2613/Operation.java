@@ -1,6 +1,7 @@
 package com.javarush.task.task26.task2613;
 
 public enum Operation {
+    LOGIN,
     INFO,
     DEPOSIT,
     WITHDRAW,
@@ -12,7 +13,7 @@ public enum Operation {
           case (2) : return DEPOSIT;
           case (3) : return WITHDRAW;
           case (4) : return EXIT;
-          default: throw new IllegalArgumentException("NoCorrect 1..4");
+          default: throw new IllegalArgumentException("NoCorrect ..4");
       }
     }
 }
