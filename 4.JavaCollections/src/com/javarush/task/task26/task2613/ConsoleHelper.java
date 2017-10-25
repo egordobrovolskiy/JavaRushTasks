@@ -5,8 +5,13 @@ import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class ConsoleHelper {
+
+    private static ResourceBundle res = ResourceBundle.getBundle(CashMachine.class.getPackage().getName()+".resources.common_en", Locale.ENGLISH);
+
 
     private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
@@ -18,11 +23,10 @@ public class ConsoleHelper {
         String result = "";
         try {
             result = bis.readLine();
-            if (result.equalsIgnoreCase("exit")) {
+            if (result.equals(res.getString("operation.EXIT"))) {
                 throw new InterruptOperationException();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignore) {
         }
         return result;
     }
@@ -30,13 +34,13 @@ public class ConsoleHelper {
     public static String askCurrencyCode() throws InterruptOperationException {
         {
             String code = null;
-            writeMessage("Please choice currency code:");
+            writeMessage(res.getString("choose.currency.code"));
             while (true) {
                 code = readString();
                 if (code.length() == 3)
                     break;
                 else
-                    writeMessage("Error, Please choice again:");
+                    writeMessage(res.getString("invalid.data"));
 
             }
             return code.toUpperCase();
@@ -44,7 +48,7 @@ public class ConsoleHelper {
     }
 
     public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
-        writeMessage("Input nominal and total:");
+        writeMessage(String.format(res.getString("choose.denomination.and.count.format"), currencyCode));
 
         String[] input;
         while (true) {
@@ -56,11 +60,11 @@ public class ConsoleHelper {
                 nominal = Integer.parseInt(input[0]);
                 total = Integer.parseInt(input[1]);
             } catch (Exception e) {
-                writeMessage("Error, Repeat again:");
+                writeMessage(res.getString("invalid.data"));
                 continue;
             }
             if (nominal <= 0 || total <= 0) {
-                writeMessage("Error, Repeat again:");
+                writeMessage(res.getString("invalid.data"));
                 continue;
             }
             break;
@@ -75,7 +79,7 @@ public class ConsoleHelper {
                 int choice = Integer.parseInt(readString());
                 return Operation.getAllowableOperationByOrdinal(choice);
             } catch (IllegalArgumentException e) {
-                writeMessage("You input wrong! Try Again.");
+                writeMessage(res.getString("invalid.data"));
                 continue;
             }
         } while (true);

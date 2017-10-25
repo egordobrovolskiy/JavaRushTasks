@@ -15,7 +15,7 @@ class ExitCommand implements Command {
     @Override
     public void execute() throws InterruptOperationException {
         ConsoleHelper.writeMessage(res.getString("exit.question.y.n"));
-        if (ConsoleHelper.readString().equals("y")) {                         //Вот тут валидатора попоялло!!!!!!!! вместо ConsoleHelper.readString().equals(res.getString("yes"))
+        if (ConsoleHelper.readString().equals(res.getString("yes"))) {   // а теперь надо как надо )))
             ConsoleHelper.writeMessage(res.getString("thank.message"));
         }
     }
