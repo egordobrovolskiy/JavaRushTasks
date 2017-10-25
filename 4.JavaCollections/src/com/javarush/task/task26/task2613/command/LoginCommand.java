@@ -1,29 +1,39 @@
 package com.javarush.task.task26.task2613.command;
 
+import com.javarush.task.task26.task2613.CashMachine;
 import com.javarush.task.task26.task2613.ConsoleHelper;
 import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
-public class LoginCommand implements Command
-{
+import java.util.Enumeration;
+import java.util.ResourceBundle;
+
+class LoginCommand implements Command {
+
+    private ResourceBundle validCreditCards = ResourceBundle.getBundle(CashMachine.class.getPackage().getName()+".resources.verifiedCards");
+
     @Override
-    public void execute() throws InterruptOperationException
-    {
-        String hardCodeCardNumber = "123456789012";
-        String hardCodePinCode = "1234";
+    public void execute() throws InterruptOperationException {
+        Enumeration<String> cardNumbers = null;
 
         while (true) {
             ConsoleHelper.writeMessage("Enter number of card");
             String cardNumber = ConsoleHelper.readString();
             ConsoleHelper.writeMessage("Enter pin-code");
             String pinCode = ConsoleHelper.readString();
-            if (cardNumber.matches("\\d{12}") && pinCode.matches("\\d{4}")) {
-                if (hardCodeCardNumber.equals(cardNumber) && hardCodePinCode.equals(pinCode)) {
-                    ConsoleHelper.writeMessage("Welcome dear user!");
-                    break;
+            if (validCreditCards.containsKey(cardNumber)) {
+                if (validCreditCards.getString(cardNumber).equals(pinCode)) {
+                    ConsoleHelper.writeMessage("Hello");
+                } else {
+                    ConsoleHelper.writeMessage("Неверный PIN");
+                    ConsoleHelper.writeMessage("Попробуйте ещё");
+                    continue;
                 }
             } else {
-                ConsoleHelper.writeMessage("Incorrect number of card or pin-code");
+                ConsoleHelper.writeMessage("Неверная карта");
+                ConsoleHelper.writeMessage("Попробуйте еще");
+                continue;
             }
+            break;
         }
     }
 }
